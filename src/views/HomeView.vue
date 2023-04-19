@@ -13,102 +13,7 @@
     <title>Learning Plattform</title>
 </head>
 <body>
-    <!-- Navigation -->
-    <!-- Icons by Google: https://fonts.google.com/icons -->
-    <div class="container-fluid p-0 fixed-top">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <img style="height:52px" src="../../public/1200px-HSBA_Hamburg_School_of_Business_Administration_Logo_2018_nur_Wappen.svg.png" class="img-thumbnail px-1" alt="...">
-            <a class="navbar-brand fw-bolder px-2" href="index.html">Digital Labour</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="lektion1.html">
-                    <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col p-0">
-                                <span class="material-symbols-outlined">
-                                    school
-                                </span>
-                            </div>
-                            <div class="col fw-bold">
-                                Lektionen                           
-                            </div>
-                        </div>
-                    </div>    
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col p-0">
-                                <span class="material-symbols-outlined">
-                                shopping_cart
-                                </span>
-                            </div>
-                            <div class="col fw-bold">
-                                Preisliste                           
-                            </div>
-                        </div>
-                    </div>
-                </a>
-              </li>
-            </ul>
-            <router-link to="/login">
-            <a class="nav-link d-flex">
-                <div class="container text-center">
-                    <div class="row align-items-start">
-                        <div class="col p-0">
-                          <span class="material-symbols-outlined">
-                            login
-                            </span>
-                        </div>
-                        <div class="col fw-bold">
-                            Login                           
-                        </div>
-                    </div>
-                </div>
-              </a>
-            </router-link>
-              <button type="button" class="nav-link d-flex" v-if="$store.state.user" @click="$store.dispatch('logout')" >
-                <div class="container text-center">
-                    <div class="row align-items-start">
-                        <div class="col p-0">
-                          <span class="material-symbols-outlined">
-                            logout
-                            </span>
-                        </div>
-                        <div class="col fw-bold">
-                            Logout                           
-                        </div>
-                    </div>
-                </div>
-              </button>
-              <router-link to="/register"> 
-              <a class="nav-link d-flex">
-                <div class="container text-center">
-                  <div class="row align-items-start">
-                      <div class="col p-0">
-                        <span class="material-symbols-outlined">
-                          input
-                          </span>
-                      </div>
-                      <div class="col fw-bold">
-                        Regstrierung                           
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </router-link>
-          </div>
-        </div>
-      </nav> 
-    </div>
-
+    <navigation-bar />
     <div class="container-fluid" style="height: 100%; background-image: url('header.png');">
       <div class="position-absolute" style="top: 25%; left: 25px;">
         <p class="text-start fw-bold" style="color: 002B5C; font-size: 75px;">
@@ -174,8 +79,10 @@
 
 import { onBeforeMount } from "vue";
 import { useStore } from "vuex";
+import NavigationBar from '@/components/NavigationBar.vue';
 
 export default {
+  components: { NavigationBar },
 
   setup() {
     const store = useStore()
