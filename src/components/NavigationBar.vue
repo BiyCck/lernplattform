@@ -8,7 +8,7 @@
             </form>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
              <li>   
-              <a class="nav-link" href="login.html">
+              <a class="nav-link" href="/">
                     <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col p-0">
@@ -24,7 +24,7 @@
                   </a>
               </li>
               <li>
-                <a class="nav-link" href="lektion1.html">
+                <a class="nav-link" href="/lektion">
                     <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col p-0">
@@ -40,7 +40,7 @@
                   </a>
               </li>
               <li>
-                <a class="nav-link" href="login.html">
+                <a class="nav-link" href="/login">
                     <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col p-0">
@@ -56,7 +56,7 @@
                   </a>
               </li>
               <li>
-                <a class="nav-link" href="register.html">
+                <a class="nav-link" href="/register">
                     <div class="container text-center">
                       <div class="row align-items-start">
                           <div class="col p-0">

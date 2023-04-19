@@ -15,7 +15,7 @@
 <body>
     <navigation-bar />
      <!-- Header -->
-    <div class="" style="height: 100%; background-image: url('img/header.svg'); background-repeat: no-repeat; background-position: 50%; background-size: cover;">
+    <div class="" style="height: 100%; background-image: url('../../public/header.svg'); background-repeat: no-repeat; background-position: 50%; background-size: cover;">
         <div class="position-absolute" style="top: 25%; left: 25px;">
             <p class="text-start fw-bold" style="color: 002B5C; font-size: 75px;">
               Lorem Ipsum <br>
@@ -27,7 +27,7 @@
     </div>
 
     <!-- Categories -->
-    <div class="" style="height: 100%; background-image: url('img/categories.svg'); background-repeat: no-repeat; background-position: 50%; background-size: cover;">
+    <div class="" style="height: 100%; background-image: url('../../public/categories.svg'); background-repeat: no-repeat; background-position: 50%; background-size: cover;">
             
     </div>
 </body>
