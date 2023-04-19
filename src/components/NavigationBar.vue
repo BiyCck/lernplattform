@@ -8,68 +8,94 @@
             </form>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
              <li>   
-              <a class="nav-link" href="/">
-                    <div class="container text-center">
+                <router-link to="/">
+                    <a class="nav-link">
+                        <div class="container text-center">
+                            <div class="row align-items-start">
+                                <div class="col p-0">
+                                    <span class="material-symbols-outlined">
+                                        home
+                                    </span>
+                                </div>
+                                <div class="col fw-bold">
+                                    Home                           
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/lektion">
+                    <a class="nav-link">
+                        <div class="container text-center">
+                            <div class="row align-items-start">
+                                <div class="col p-0">
+                                    <span class="material-symbols-outlined">
+                                        school
+                                    </span>
+                                </div>
+                                <div class="col fw-bold">
+                                    Kurse                           
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </router-link>    
+              </li>
+              <li>
+                <router-link to="/login">
+                    <a class="nav-link">
+                        <div class="container text-center">
+                            <div class="row align-items-start">
+                                <div class="col p-0">
+                                <span class="material-symbols-outlined">
+                                    login
+                                    </span>
+                                </div>
+                                <div class="col fw-bold">
+                                    Login                           
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/register">
+                    <a class="nav-link">
+                        <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col p-0">
                                 <span class="material-symbols-outlined">
-                                    home
+                                input
                                 </span>
                             </div>
                             <div class="col fw-bold">
-                                Home                           
+                                Registrierung                           
                             </div>
                         </div>
-                    </div>
-                  </a>
+                        </div>
+                    </a>
+                </router-link>
               </li>
               <li>
-                <a class="nav-link" href="/lektion">
-                    <div class="container text-center">
+                <router-link to="/logout">
+                    <a class="nav-link">
+                        <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col p-0">
                                 <span class="material-symbols-outlined">
-                                    school
+                                input
                                 </span>
                             </div>
                             <div class="col fw-bold">
-                                Kurse                           
+                                Logout                           
                             </div>
                         </div>
-                    </div>
-                  </a>
-              </li>
-              <li>
-                <a class="nav-link" href="/login">
-                    <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col p-0">
-                              <span class="material-symbols-outlined">
-                                login
-                                </span>
-                            </div>
-                            <div class="col fw-bold">
-                                Login                           
-                            </div>
                         </div>
-                    </div>
-                  </a>
-              </li>
-              <li>
-                <a class="nav-link" href="/register">
-                    <div class="container text-center">
-                      <div class="row align-items-start">
-                          <div class="col p-0">
-                            <span class="material-symbols-outlined">
-                              input
-                              </span>
-                          </div>
-                          <div class="col fw-bold">
-                            Regstrierung                           
-                        </div>
-                      </div>
-                    </div>
-                  </a>
+                    </a>
+                </router-link>
               </li>
             </ul>
         </div>
