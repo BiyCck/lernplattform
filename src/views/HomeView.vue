@@ -48,29 +48,11 @@
             </div>
           </div>
         </div>
-        <div class="row py-2">
-          <div class="col">
-            <div class="card mx-auto" style="width: 18rem;">
-              <img src="../../public/Python.svg.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Informationen</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mx-auto" style="width: 18rem;">
-              <img src="../../public/Python.svg.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Informationen</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="" style="height: 100%; background-image: url('../../src/assets/categories.svg'); background-repeat: no-repeat; background-position: 50%; background-size: cover;">
+            
     </div>
 </body>
 </template>
