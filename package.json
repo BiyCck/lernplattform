@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "dev": "nodemon --watch src --exec 'npm run serve'",
+    "deploy": "npm run build && firebase deploy",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
