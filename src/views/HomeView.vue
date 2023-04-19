@@ -15,7 +15,7 @@
 <body>
     <navigation-bar />
      <!-- Header -->
-    <div class="" style="height: 100%; background-image: url('../../public/header.svg'); background-repeat: no-repeat; background-position: 50%; background-size: cover;">
+    <div id="header">
         <div class="position-absolute" style="top: 25%; left: 25px;">
             <p class="text-start fw-bold" style="color: 002B5C; font-size: 75px;">
               Lorem Ipsum <br>
@@ -27,12 +27,30 @@
     </div>
 
     <!-- Categories -->
-    <div class="" style="height: 100%; background-image: url('../../public/categories.svg'); background-repeat: no-repeat; background-position: 50%; background-size: cover;">
+    <div id="categories">
             
     </div>
 </body>
 </template>
-<style> html, body, #app {height: 100%}</style>
+<style> 
+        html, body, #app {height: 100%}
+
+        #header{
+          height: 100%; 
+          background-image: url('../../public/header.svg'); 
+          background-repeat: no-repeat; 
+          background-position: 50%; 
+          background-size: cover;
+        }
+
+        #categories{
+          height: 100%; 
+          background-image: url('../../public/categories.svg'); 
+          background-repeat: no-repeat; 
+          background-position: 50%; 
+          background-size: cover;
+        }
+</style>
 <script>
 
 import { onBeforeMount } from "vue";
