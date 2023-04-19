@@ -18,23 +18,19 @@
         <!-- Registrierung -->
         <div class="container-xl d-flex" style="height: 100%; color: 002B5C;">
         <div class="m-auto" style="max-width: 600px">
-            <form class="row g-3">
+            <form class="row g-3" @submit.prevent="register">
                 <div class="col-md-12">
                     <p class="fw-bold fs-1 text-center">
                         REGSITRIERUNG
                     </p>
                 </div>
                 <div class="col-md-12">
-                  <label for="username" class="form-label">GEBE EINEN BENUTZERNAMEN EIN</label>
-                  <input type="text" class="form-control bg-body-tertiary rounded-pill" id="username">
-                </div>
-                <div class="col-md-12">
                     <label for="email" class="form-label">GEBE E-MAIL-ADRESSE EIN</label>
-                    <input type="email" class="form-control bg-body-tertiary rounded-pill" id="email">
+                    <input type="email" class="form-control bg-body-tertiary rounded-pill" id="email" v-model="register_form.email">
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword" class="form-label">ERSTELLE EIN PASSWORT</label>
-                  <input type="password" class="form-control bg-body-tertiary rounded-pill" id="inputPassword">
+                  <input type="password" class="form-control bg-body-tertiary rounded-pill" id="inputPassword" v-model="register_form.password">
                 </div>
                 <div class="col-md-6">
                     <label for="inputPasswordRepeat" class="form-label">WIEDERHOLE DEIN PASSWORT </label>

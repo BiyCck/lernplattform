@@ -17,7 +17,7 @@
     <!-- Anmeldung -->
     <div class="container-xl d-flex" style="height: 100%; color: 002B5C;">
         <div class="m-auto" style="max-width: 600px">
-            <form class="row g-3">
+            <form class="row g-3" @submit.prevent="login">
                 <div class="col-md-12">
                     <p class="fw-bold fs-1 text-center">
                         LOGIN
@@ -25,11 +25,11 @@
                 </div>
                 <div class="col-md-12">
                   <label for="username" class="form-label">GEBE DEINEN BENUTZERNAMEN EIN</label>
-                  <input type="text" class="form-control bg-body-tertiary rounded-pill" id="username">
+                  <input type="text" class="form-control bg-body-tertiary rounded-pill" id="username" v-model="login_form.email">
                 </div>
                 <div class="col-md-12">
                   <label for="inputPassword" class="form-label">GEBE DEIN PASSWORT EIN</label>
-                  <input type="password" class="form-control bg-body-tertiary rounded-pill" id="inputPassword">
+                  <input type="password" class="form-control bg-body-tertiary rounded-pill" id="inputPassword" v-model="login_form.password">
                 </div>
                 <div class="col-12 text-center">
                   <button type="submit" class="btn btn-primary rounded-pill my-2 text-white text-center fs-4" style="background-color: #002B5C; border: none; height: 50px; width: 150px;">Anmelden</button>

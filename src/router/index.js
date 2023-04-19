@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import { auth } from '@/firebase'
+import { auth } from '@/firebase'
 
 const routes = [
   {
@@ -32,7 +32,7 @@ const router = createRouter({
   routes
 })
 
-/*
+
 router.beforeEach((to, from, next) => {
 
   const currentUser = auth.currentUser;
@@ -52,5 +52,5 @@ router.beforeEach((to, from, next) => {
 
   next();
 })
-*/
+
 export default router
