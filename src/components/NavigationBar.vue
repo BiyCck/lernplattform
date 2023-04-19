@@ -44,11 +44,12 @@
                 </a>
                 </li>
             </ul>
+            <router-link to="/login">
             <a class="nav-link d-flex" href="login.html">
                 <div class="container text-center">
                     <div class="row align-items-start">
                         <div class="col p-0">
-                            <span class="material-symbols-outlined">
+                          <span class="material-symbols-outlined">
                             login
                             </span>
                         </div>
@@ -57,21 +58,38 @@
                         </div>
                     </div>
                 </div>
-                </a>
-                <a class="nav-link d-flex" href="register.html">
+              </a>
+            </router-link>
+              <button type="button" class="nav-link d-flex" v-if="$store.state.user" @click="$store.dispatch('logout')" >
                 <div class="container text-center">
                     <div class="row align-items-start">
                         <div class="col p-0">
-                        <span class="material-symbols-outlined">
-                            input
+                          <span class="material-symbols-outlined">
+                            logout
                             </span>
                         </div>
                         <div class="col fw-bold">
-                        Regstrierung                           
-                    </div>
+                            Logout                           
+                        </div>
                     </div>
                 </div>
-                </a>
+              </button>
+              <router-link to="/register"> 
+              <a class="nav-link d-flex" href="register.html">
+                <div class="container text-center">
+                  <div class="row align-items-start">
+                      <div class="col p-0">
+                        <span class="material-symbols-outlined">
+                          input
+                          </span>
+                      </div>
+                      <div class="col fw-bold">
+                        Regstrierung                           
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </router-link>
             
             </div>
           </div>

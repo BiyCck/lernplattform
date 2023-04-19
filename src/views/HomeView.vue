@@ -58,7 +58,8 @@
                 </a>
               </li>
             </ul>
-            <a class="nav-link d-flex" href="login.html">
+            <router-link to="/login">
+            <a class="nav-link d-flex">
                 <div class="container text-center">
                     <div class="row align-items-start">
                         <div class="col p-0">
@@ -72,7 +73,7 @@
                     </div>
                 </div>
               </a>
-
+            </router-link>
               <button type="button" class="nav-link d-flex" v-if="$store.state.user" @click="$store.dispatch('logout')" >
                 <div class="container text-center">
                     <div class="row align-items-start">
@@ -87,7 +88,8 @@
                     </div>
                 </div>
               </button>
-              <a class="nav-link d-flex" href="register.html">
+              <router-link to="/register"> 
+              <a class="nav-link d-flex">
                 <div class="container text-center">
                   <div class="row align-items-start">
                       <div class="col p-0">
@@ -101,6 +103,7 @@
                   </div>
                 </div>
               </a>
+            </router-link>
           </div>
         </div>
       </nav> 
