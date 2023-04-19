@@ -1,4 +1,5 @@
 <template>
+    
     <head>
         <meta name="title" content="Lernplattform für Python">
         <meta name="description" content="Eine Lernplattform, um die Programmiersprache Python zu erlernen.">
@@ -20,7 +21,7 @@
             <form class="row g-3">
                 <div class="col-md-12">
                     <p class="fw-bold fs-1 text-center">
-                        LOGIN
+                        REGSITRIERUNG
                     </p>
                 </div>
                 <div class="col-md-12">
@@ -50,7 +51,7 @@
     </div>
     </body>
 </template>
-
+<style> html, body, #app {height: 100%}</style>
 <script>
     import {ref} from 'vue';
     import {useStore} from 'vuex';
