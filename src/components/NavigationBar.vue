@@ -81,7 +81,7 @@
               </li>
               <li>
                 <router-link to="/logout" v-if="$store.state.user">
-                    <a class="nav-link">
+                    <a class="nav-link" @click="$store.dispatch('logout')">
                         <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col p-0">
