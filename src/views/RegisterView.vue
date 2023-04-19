@@ -15,62 +15,39 @@
     <body>
         <navigation-bar />
         <!-- Registrierung -->
-        <div class="container-xl d-flex" style="height: 100%">
-            <div class="m-auto" style="max-width: 600px">
-                <form class="row g-3" @submit.prevent="register">
-                    <div class="col-md-12">
-                            <p class="fs-2">
-                                Regstrierung
-                            </p>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputFirstname" class="form-label">Vorname</label>
-                        <input type="text" class="form-control" id="inputFirstname">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputLastname" class="form-label">Nachname</label>
-                        <input type="text" class="form-control" id="inputLastname">
-                    </div>
-                    <div class="col-md-12">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" v-model="register_form.email">
-                    </div>
-                    <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" v-model="register_form.password">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputPasswordrepeat" class="form-label">Password wiederholen</label>
-                        <input type="password" class="form-control" id="inputPasswordrepeat">
-                    </div>
-                    <div class="col-12">
-                    <label for="inputAddress" class="form-label">Addresse</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="Straße und Hausnummer">
-                    </div>
-                    <div class="col-md-6">
-                    <label for="inputCity" class="form-label">Ort</label>
-                    <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="col-md-2">
-                    <label for="inputZip" class="form-label">Postleitzahl</label>
-                    <input type="text" class="form-control" id="inputZip">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputState" class="form-label">Land</label>
-                        <select id="inputState" class="form-select">
-                        <option selected>Auswählen...</option>
-                        <option>...</option>
-                        </select>
-                    </div>
-                    <div class="col-8">
-                        <button type="submit" class="btn btn-primary" value="Register">Registrieren</button>
-                    </div>
-                    <div class="col-4">
-                        <a class="btn">Passwort vergessen...</a>
-                    </div>
-                </form>
-            </div>
+        <div class="container-xl d-flex" style="height: 100%; color: 002B5C;">
+        <div class="m-auto" style="max-width: 600px">
+            <form class="row g-3">
+                <div class="col-md-12">
+                    <p class="fw-bold fs-1 text-center">
+                        LOGIN
+                    </p>
+                </div>
+                <div class="col-md-12">
+                  <label for="username" class="form-label">GEBE EINEN BENUTZERNAMEN EIN</label>
+                  <input type="text" class="form-control bg-body-tertiary rounded-pill" id="username">
+                </div>
+                <div class="col-md-12">
+                    <label for="email" class="form-label">GEBE E-MAIL-ADRESSE EIN</label>
+                    <input type="email" class="form-control bg-body-tertiary rounded-pill" id="email">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword" class="form-label">ERSTELLE EIN PASSWORT</label>
+                  <input type="password" class="form-control bg-body-tertiary rounded-pill" id="inputPassword">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPasswordRepeat" class="form-label">WIEDERHOLE DEIN PASSWORT </label>
+                    <input type="password" class="form-control bg-body-tertiary rounded-pill" id="inputPasswordRepeat">
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary rounded-pill my-2 text-white text-center fs-4" style="background-color: #002B5C; border: none; height: 50px; width: 150px;">Anmelden</button>
+                </div>
+                <div class="col-12 text-center">
+                  <a class=" btn fs-6">Neu hier? Hier registrieren</a>
+                </div>
+            </form>
         </div>
+    </div>
     </body>
 </template>
 

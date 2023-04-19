@@ -15,25 +15,27 @@
 <body>
     <navigation-bar />
     <!-- Anmeldung -->
-    <div class="container-xl d-flex" style="height: 100%">
+    <div class="container-xl d-flex" style="height: 100%; color: 002B5C;">
         <div class="m-auto" style="max-width: 600px">
-            <form class="row g-3" @submit.prevent="login">
+            <form class="row g-3">
                 <div class="col-md-12">
-                        <p class="fs-2">Anmeldung</p>
-                </div>
-                <div class="col-md-12">
-                  <label for="inputEmail" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail" v-model="login_form.email">
+                    <p class="fw-bold fs-1 text-center">
+                        LOGIN
+                    </p>
                 </div>
                 <div class="col-md-12">
-                  <label for="inputPassword" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword" v-model="login_form.password">
+                  <label for="username" class="form-label">GEBE DEINEN BENUTZERNAMEN EIN</label>
+                  <input type="text" class="form-control bg-body-tertiary rounded-pill" id="username">
                 </div>
-                <div class="col-8">
-                  <button type="submit" class="btn btn-primary" value="Login">Anmelden</button>
+                <div class="col-md-12">
+                  <label for="inputPassword" class="form-label">GEBE DEIN PASSWORT EIN</label>
+                  <input type="password" class="form-control bg-body-tertiary rounded-pill" id="inputPassword">
                 </div>
-                <div class="col-4">
-                  <a class="btn">Passwort vergessen...</a>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary rounded-pill my-2 text-white text-center fs-4" style="background-color: #002B5C; border: none; height: 50px; width: 150px;">Anmelden</button>
+                </div>
+                <div class="col-12 text-center">
+                  <a class=" btn fs-6">Neu hier? Hier registrieren</a>
                 </div>
             </form>
         </div>

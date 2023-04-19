@@ -14,41 +14,27 @@
     </head>
     <body>
         <navigation-bar />
-        <div class="container-xl">
-            <div class="row">
-            <div class="col-2 border-end">
-                <ul class="nav flex-column pt-5 mt-5">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Lektion 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lektion 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lektion 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lektion 4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lektion 5</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lektion 6</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lektion 7</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lektion 8</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lektion 9</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lektion 10</a>
-                    </li>
-                </ul>
+        <!-- content -->
+    <div class="container-fluid py-5 px-5">
+        <!-- title -->
+        <div class="container-fluid row pt-5">
+            <h1 class="fw-bold fs-1" style="color: #002B5C;">Technikkurs - Lektion 1</h1>
+        </div>
+        <!-- left -->
+        <div class="row">
+            <div class="col-2 py-5">
+                <nav class="nav flex-column">
+                    <a class="nav-link rounded-pill my-2 text-white text-center" style="background-color: #002B5C;" href="#">Lektion 1</a>
+                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 2</a>
+                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 3</a>
+                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 4</a>
+                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 5</a>
+                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 6</a>
+                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 7</a>
+                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 8</a>
+                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 9</a>
+                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 10</a>
+                </nav>
             </div>
     
             <!-- right -->
