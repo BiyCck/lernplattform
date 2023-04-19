@@ -44,7 +44,7 @@
                 </router-link>    
               </li>
               <li>
-                <router-link to="/login">
+                <router-link to="/login" v-if="!$store.state.user">
                     <a class="nav-link">
                         <div class="container text-center">
                             <div class="row align-items-start">
@@ -62,7 +62,7 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/register">
+                <router-link to="/register" v-if="!$store.state.user">
                     <a class="nav-link">
                         <div class="container text-center">
                         <div class="row align-items-start">
@@ -80,7 +80,7 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/logout">
+                <router-link to="/logout" v-if="$store.state.user">
                     <a class="nav-link">
                         <div class="container text-center">
                         <div class="row align-items-start">
@@ -94,7 +94,7 @@
                             </div>
                         </div>
                         </div>
-                    </a>
+                      </a>
                 </router-link>
               </li>
             </ul>
