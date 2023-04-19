@@ -28,9 +28,47 @@
 
     <!-- Categories -->
     <div id="categories">
-            
+
+      <!--<img class="z-1 position-fixed" style="top: 120%; left: 30%;" src="../../public/gotLearning-Collaborative-Learning-System-CLS-hero-tablet-student-elearning-about1.svg" alt="">-->
+
+      <div class="text-center" style="height:100%">
+        <div class="h-25 w-100 d-inline-block">
+          <div class="position-absolute" style="top: 110%; left: 25px; right: 25px">
+            <p class="text-start fw-bold fs-1" style="color: 002B5C;">
+              Was möchtest du lernen?
+            </p>
+          </div>
+        </div>
+
+        <!-- obere Reihe -->
+        <div class="h-25 w-50 d-inline-block">
+          <div class="position-absolute h-10 px-5 py-4 text-center d-inline-block" style="top: 130%; left: 12%;">
+            <a href="" class="btn text-start fw-bold fs-1 px-5 py-4 rounded bg-light text-center w-100 d-inline-block">Technik</a>
+          </div>
+        </div>
+
+        <div class="h-25 w-50 d-inline-block">
+          <div class="position-absolute h-10 px-5 py-4 text-center d-inline-block" style="top: 130%; right: 12%;">
+            <a href="" class="btn text-start fw-bold fs-1 px-5 py-4 rounded bg-light text-center w-100 d-inline-block">Wirtschaft</a>
+          </div>
+        </div>
+
+        <!-- untere Reihe -->
+        <div class="h-25 w-50 d-inline-block">
+          <div class="position-absolute h-10 px-5 py-4 text-center d-inline-block" style="top: 155%; left: 12%;">
+            <a href="" class="btn text-start fw-bold fs-1 px-5 py-4 rounded bg-light text-center w-100 d-inline-block">Sport</a>
+          </div>
+        </div>
+
+        <div class="h-25 w-50 d-inline-block">
+          <div class="position-absolute h-10 px-5 py-4 text-center d-inline-block" style="top: 155%; right: 12%;">
+            <a href="" class="btn text-start fw-bold fs-1 px-5 py-4 rounded bg-light text-center w-100 d-inline-block">Sprachen</a>
+          </div>
+        </div>
+
+      </div>
     </div>
-</body>
+  </body>
 </template>
 <style> 
         html, body, #app {height: 100%}
