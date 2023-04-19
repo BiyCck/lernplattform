@@ -5,14 +5,19 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development with nodemon
 ```
-npm run serve
+npm run dev
 ```
 
 ### Compiles and minifies for production
 ```
 npm run build
+```
+
+### Deploy to firebase
+```
+npm run build && firebase deploy
 ```
 
 ### Lints and fixes files
