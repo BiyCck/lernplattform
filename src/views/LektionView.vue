@@ -1,115 +1,54 @@
 <template>
-<head>
-    <meta name="title" content="Lernplattform für Python">
-    <meta name="description" content="Eine Lernplattform, um die Programmiersprache Python zu erlernen.">
-    <meta name="keywords" content="Lernen, Plattform, Lernplattform, python, deep learning, künstliche neuronale netze, machine learning, ki, chatgpt, programmieren, program">
-    <meta name="robots" content="index, nofollow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-16">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    <meta name="author" content="Technikgruppe der HSBA - A20-BI2 & A20-MMC2">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Learning Plattform</title>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary z-1 position-absolute container-fluid">
-        <div class="container-fluid">
-            <img style="height:52px" src="img/HSBA_Logo.svg" class="px-1" alt="...">
-            <form class="d-flex my-auto mx-4 rounded" role="search">
-                <input class="form-control me-2 rounded-pill fw-bold" type="search" placeholder="Suchen nach..." aria-label="Search">
-            </form>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li>
-                  <a class="nav-link" href="login.html">
-                    <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col p-0">
-                                <span class="material-symbols-outlined">
-                                    home
-                                </span>
-                            </div>
-                            <div class="col fw-bold">
-                                Home                           
-                            </div>
-                        </div>
-                    </div>
-                  </a>
-              </li>
-              <li>
-                <a class="nav-link" href="lektion1.html">
-                    <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col p-0">
-                                <span class="material-symbols-outlined">
-                                    school
-                                </span>
-                            </div>
-                            <div class="col fw-bold">
-                                Kurse                           
-                            </div>
-                        </div>
-                    </div>
-                  </a>
-              </li>
-              <li>
-                <a class="nav-link" href="login.html">
-                    <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col p-0">
-                              <span class="material-symbols-outlined">
-                                login
-                                </span>
-                            </div>
-                            <div class="col fw-bold">
-                                Login                           
-                            </div>
-                        </div>
-                    </div>
-                  </a>
-              </li>
-              <li>
-                <a class="nav-link" href="register.html">
-                    <div class="container text-center">
-                      <div class="row align-items-start">
-                          <div class="col p-0">
-                            <span class="material-symbols-outlined">
-                              input
-                              </span>
-                          </div>
-                          <div class="col fw-bold">
-                            Regstrierung                           
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-              </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- content -->
-    <div class="container-fluid py-5 px-5">
-        <!-- title -->
-        <div class="container-fluid row pt-5">
-            <h1 class="fw-bold fs-1" style="color: #002B5C;">Technikkurs - Lektion 1</h1>
-        </div>
-        <!-- left -->
-        <div class="row">
-            <div class="col-2 py-5">
-                <nav class="nav flex-column">
-                    <a class="nav-link rounded-pill my-2 text-white text-center" style="background-color: #002B5C;" href="#">Lektion 1</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 2</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 3</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 4</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 5</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 6</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 7</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 8</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 9</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 10</a>
-                </nav>
+    <head>
+        <meta name="title" content="Lernplattform für Python">
+        <meta name="description" content="Eine Lernplattform, um die Programmiersprache Python zu erlernen.">
+        <meta name="keywords" content="Lernen, Plattform, Lernplattform, python, deep learning, künstliche neuronale netze, machine learning, ki, chatgpt, programmieren, program">
+        <meta name="robots" content="index, nofollow">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-16">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="7 days">
+        <meta name="author" content="Technikgruppe der HSBA - A20-BI2 & A20-MMC2">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <title>Learning Plattform</title>
+    </head>
+    <body>
+        <navigation-bar />
+        <div class="container-xl">
+            <div class="row">
+            <div class="col-2 border-end">
+                <ul class="nav flex-column pt-5 mt-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Lektion 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lektion 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lektion 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lektion 4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lektion 5</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lektion 6</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lektion 7</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lektion 8</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lektion 9</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lektion 10</a>
+                    </li>
+                </ul>
             </div>
     
             <!-- right -->
