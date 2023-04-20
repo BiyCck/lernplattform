@@ -167,6 +167,9 @@
         </div>
       </div>
     </div>
+    <div>
+      <Codemirror/>
+    </div>
 </body>
 </template>
 
@@ -174,8 +177,12 @@
 
 import { onBeforeMount } from "vue";
 import { useStore } from "vuex";
+import Codemirror from "/src/components/Codemirror.vue";
 
 export default {
+  components: {
+    Codemirror,
+  },
 
   setup() {
     const store = useStore()
