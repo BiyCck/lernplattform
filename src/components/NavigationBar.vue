@@ -1,100 +1,106 @@
 <template>
     <!-- Navigation -->
-    <!-- Icons by Google: https://fonts.google.com/icons -->
-    <div class="container-fluid p-0 fixed-top">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-            <img style="height:52px" src="../../public/1200px-HSBA_Hamburg_School_of_Business_Administration_Logo_2018_nur_Wappen.svg.png" class="img-thumbnail px-1" alt="...">
-            <a class="navbar-brand fw-bolder px-2" href="index.html">Digital Labour</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary z-1 position-absolute container-fluid">
+        <div class="container-fluid">
+            <img style="height:52px" src="../../public/HSBA_Logo.svg" class="px-1" alt="...">
+            <form class="d-flex my-auto mx-4 rounded" role="search">
+                <input class="form-control me-2 rounded-pill fw-bold" type="search" placeholder="Suchen nach..." aria-label="Search">
+            </form>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link" href="lektion1.html">
-                    <div class="container text-center">
+             <li>   
+                <router-link to="/">
+                    <a class="nav-link">
+                        <div class="container text-center">
+                            <div class="row align-items-start">
+                                <div class="col p-0">
+                                    <span class="material-symbols-outlined">
+                                        home
+                                    </span>
+                                </div>
+                                <div class="col fw-bold">
+                                    Home                           
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/lektion">
+                    <a class="nav-link">
+                        <div class="container text-center">
+                            <div class="row align-items-start">
+                                <div class="col p-0">
+                                    <span class="material-symbols-outlined">
+                                        school
+                                    </span>
+                                </div>
+                                <div class="col fw-bold">
+                                    Kurse                           
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </router-link>    
+              </li>
+              <li>
+                <router-link to="/login" v-if="!$store.state.user">
+                    <a class="nav-link">
+                        <div class="container text-center">
+                            <div class="row align-items-start">
+                                <div class="col p-0">
+                                <span class="material-symbols-outlined">
+                                    login
+                                    </span>
+                                </div>
+                                <div class="col fw-bold">
+                                    Login                           
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/register" v-if="!$store.state.user">
+                    <a class="nav-link">
+                        <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col p-0">
                                 <span class="material-symbols-outlined">
-                                    school
+                                input
                                 </span>
                             </div>
                             <div class="col fw-bold">
-                                Lektionen                           
+                                Registrierung                           
                             </div>
                         </div>
-                    </div>    
-                </a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div class="container text-center">
+                        </div>
+                    </a>
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/logout" v-if="$store.state.user">
+                    <a class="nav-link" @click="$store.dispatch('logout')">
+                        <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col p-0">
                                 <span class="material-symbols-outlined">
-                                shopping_cart
+                                input
                                 </span>
                             </div>
                             <div class="col fw-bold">
-                                Preisliste                           
+                                Logout                           
                             </div>
                         </div>
-                    </div>
-                </a>
-                </li>
+                        </div>
+                      </a>
+                </router-link>
+              </li>
             </ul>
-            <router-link to="/login">
-            <a class="nav-link d-flex" href="login.html">
-                <div class="container text-center">
-                    <div class="row align-items-start">
-                        <div class="col p-0">
-                          <span class="material-symbols-outlined">
-                            login
-                            </span>
-                        </div>
-                        <div class="col fw-bold">
-                            Login                           
-                        </div>
-                    </div>
-                </div>
-              </a>
-            </router-link>
-              <button type="button" class="nav-link d-flex" v-if="$store.state.user" @click="$store.dispatch('logout')" >
-                <div class="container text-center">
-                    <div class="row align-items-start">
-                        <div class="col p-0">
-                          <span class="material-symbols-outlined">
-                            logout
-                            </span>
-                        </div>
-                        <div class="col fw-bold">
-                            Logout                           
-                        </div>
-                    </div>
-                </div>
-              </button>
-              <router-link to="/register"> 
-              <a class="nav-link d-flex" href="register.html">
-                <div class="container text-center">
-                  <div class="row align-items-start">
-                      <div class="col p-0">
-                        <span class="material-symbols-outlined">
-                          input
-                          </span>
-                      </div>
-                      <div class="col fw-bold">
-                        Regstrierung                           
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </router-link>
-            
-            </div>
-          </div>
-        </nav> 
-      </div>
+        </div>
+    </nav>
+
 </template>
 
 <script>

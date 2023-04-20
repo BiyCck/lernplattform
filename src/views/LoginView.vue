@@ -13,105 +13,29 @@
     <title>Learning Plattform</title>
 </head>
 <body>
-    <!-- Navigation -->
-    <!-- Icons by Google: https://fonts.google.com/icons -->
-    <div class="container-fluid p-0 fixed-top">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-              <img style="height:52px" src="public/1200px-HSBA_Hamburg_School_of_Business_Administration_Logo_2018_nur_Wappen.svg.png" class="img-thumbnail px-1" alt="...">
-              <a class="navbar-brand fw-bolder px-2" href="index.html">Digital Labour</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="lektion1.html">
-                      <div class="container text-center">
-                          <div class="row align-items-start">
-                              <div class="col p-0">
-                                  <span class="material-symbols-outlined">
-                                      school
-                                  </span>
-                              </div>
-                              <div class="col fw-bold">
-                                  Lektionen                           
-                              </div>
-                          </div>
-                      </div>    
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                      <div class="container text-center">
-                          <div class="row align-items-start">
-                              <div class="col p-0">
-                                  <span class="material-symbols-outlined">
-                                  shopping_cart
-                                  </span>
-                              </div>
-                              <div class="col fw-bold">
-                                  Preisliste                           
-                              </div>
-                          </div>
-                      </div>
-                  </a>
-                </li>
-              </ul>
-              <a class="nav-link d-flex" href="login.html">
-                  <div class="container text-center">
-                      <div class="row align-items-start">
-                          <div class="col p-0">
-                            <span class="material-symbols-outlined">
-                              login
-                              </span>
-                          </div>
-                          <div class="col fw-bold">
-                              Login                           
-                          </div>
-                      </div>
-                  </div>
-                </a>
-                <a class="nav-link d-flex" href="register.html">
-                  <div class="container text-center">
-                    <div class="row align-items-start">
-                        <div class="col p-0">
-                          <span class="material-symbols-outlined">
-                            input
-                            </span>
-                        </div>
-                        <div class="col fw-bold">
-                          Regstrierung                           
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              
-            </div>
-          </div>
-        </nav> 
-      </div>
-
+    <navigation-bar />
     <!-- Anmeldung -->
-    <div class="container-xl d-flex" style="height: 100%">
+    <div class="container-xl d-flex" style="height: 100%; color: 002B5C;">
         <div class="m-auto" style="max-width: 600px">
             <form class="row g-3" @submit.prevent="login">
                 <div class="col-md-12">
-                        <p class="fs-2">Anmeldung</p>
+                    <p class="fw-bold fs-1 text-center">
+                        LOGIN
+                    </p>
                 </div>
                 <div class="col-md-12">
-                  <label for="inputEmail" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail" v-model="login_form.email">
+                  <label for="username" class="form-label">GEBE DEINEN BENUTZERNAMEN EIN</label>
+                  <input type="text" class="form-control bg-body-tertiary rounded-pill" id="username" v-model="login_form.email">
                 </div>
                 <div class="col-md-12">
-                  <label for="inputPassword" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword" v-model="login_form.password">
+                  <label for="inputPassword" class="form-label">GEBE DEIN PASSWORT EIN</label>
+                  <input type="password" class="form-control bg-body-tertiary rounded-pill" id="inputPassword" v-model="login_form.password">
                 </div>
-                <div class="col-8">
-                  <button type="submit" class="btn btn-primary" value="Login">Anmelden</button>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary rounded-pill my-2 text-white text-center fs-4" style="background-color: #002B5C; border: none; height: 50px; width: 150px;">Anmelden</button>
                 </div>
-                <div class="col-4">
-                  <a class="btn">Passwort vergessen...</a>
+                <div class="col-12 text-center">
+                  <a class=" btn fs-6">Neu hier? Hier registrieren</a>
                 </div>
             </form>
         </div>
@@ -119,13 +43,16 @@
 
 </body>
 </template>
+<style> html, body, #app {height: 100%}</style>
 
 <script>
 
     import {ref} from 'vue';
     import {useStore} from 'vuex';
+import NavigationBar from '@/components/NavigationBar.vue';
 
     export default {
+  components: { NavigationBar },
     setup () {
         const login_form = ref({});
         const store = useStore();

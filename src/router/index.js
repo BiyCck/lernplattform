@@ -32,10 +32,10 @@ const router = createRouter({
   routes
 })
 
+
 router.beforeEach((to, from, next) => {
 
   const currentUser = auth.currentUser;
-
   if(to.path === '/login' && currentUser){
     next('/lektion')
     return;
@@ -45,7 +45,6 @@ router.beforeEach((to, from, next) => {
     next('/lektion')
     return;
   }
-
   if(to.matched.some(record => record.meta.requiresAuth) && !currentUser){
     next('/login')
     return;
