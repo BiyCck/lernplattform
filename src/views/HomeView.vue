@@ -97,7 +97,6 @@ import NavigationBar from '@/components/NavigationBar.vue';
 
 export default {
   components: { NavigationBar },
-
   setup() {
     const store = useStore()
 

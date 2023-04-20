@@ -8,9 +8,6 @@
     :tab-size="2"
     :extensions="extensions"
     @ready="handleReady"
-    @change="log('change', $event)"
-    @focus="log('focus', $event)"
-    @blur="log('blur', $event)"
   />
 </template>
 
@@ -36,8 +33,13 @@
       return {
         code,
         extensions,
-        handleReady,
-        log: console.log
+        handleReady
+      }
+    },
+    watch : {
+      code : function(newCode, oldCode) { //eslint-disable-line
+        this.emitter.emit("code-update", newCode)
+        
       }
     },
 
