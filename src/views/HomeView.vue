@@ -170,6 +170,9 @@
     <div>
       <Codemirror/>
     </div>
+    <div>
+      <ChatGPT/>
+    </div>
 </body>
 </template>
 
@@ -178,10 +181,12 @@
 import { onBeforeMount } from "vue";
 import { useStore } from "vuex";
 import Codemirror from "/src/components/Codemirror.vue";
+import ChatGPT from "/src/components/ChatGPT.vue";
 
 export default {
   components: {
     Codemirror,
+    ChatGPT
   },
 
   setup() {
