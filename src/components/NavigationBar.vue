@@ -1,14 +1,10 @@
 <template>
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary z-1 position-absolute container-fluid">
-        <div class="container-fluid">
+        <div class="container-fluid ">
             <img style="height:52px" src="../../public/HSBA_Logo.svg" class="px-1" alt="...">
-            <form class="d-flex my-auto mx-4 rounded" role="search">
-                <input class="form-control me-2 rounded-pill fw-bold" type="search" placeholder="Suchen nach..." aria-label="Search">
-            </form>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
              <li>   
-                <router-link to="/">
+                <RouterLink to="/">
                     <a class="nav-link">
                         <div class="container text-center">
                             <div class="row align-items-start">
@@ -23,10 +19,10 @@
                             </div>
                         </div>
                     </a>
-                </router-link>
+                </RouterLink>
               </li>
               <li>
-                <router-link to="/lektion">
+                <RouterLink to="/lektion">
                     <a class="nav-link">
                         <div class="container text-center">
                             <div class="row align-items-start">
@@ -41,10 +37,10 @@
                             </div>
                         </div>
                     </a>
-                </router-link>    
+                </RouterLink>    
               </li>
-              <li>
-                <router-link to="/login" v-if="!$store.state.user">
+              <li v-show="! userStore.isLoggedIn">
+                <RouterLink to="/login">
                     <a class="nav-link">
                         <div class="container text-center">
                             <div class="row align-items-start">
@@ -59,10 +55,10 @@
                             </div>
                         </div>
                     </a>
-                </router-link>
+                </RouterLink>
               </li>
-              <li>
-                <router-link to="/register" v-if="!$store.state.user">
+              <li v-show="! userStore.isLoggedIn">
+                <RouterLink to="/register">
                     <a class="nav-link">
                         <div class="container text-center">
                         <div class="row align-items-start">
@@ -77,11 +73,11 @@
                         </div>
                         </div>
                     </a>
-                </router-link>
+                </RouterLink>
               </li>
-              <li>
-                <router-link to="/logout" v-if="$store.state.user">
-                    <a class="nav-link" @click="$store.dispatch('logout')">
+              <li v-show="userStore.isLoggedIn">
+                <RouterLink to="/logout">
+                    <a class="nav-link">
                         <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col p-0">
@@ -95,18 +91,22 @@
                         </div>
                         </div>
                       </a>
-                </router-link>
+                </RouterLink>
               </li>
             </ul>
         </div>
     </nav>
 
 </template>
+<script setup>
 
-<script>
+import { useUserStore } from '@/store/UserStore';
+
+const userStore = useUserStore()
+
+
 
 </script>
-
 <style>
 
 </style>

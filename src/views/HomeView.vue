@@ -70,40 +70,4 @@
     </div>
   </body>
 </template>
-<style> 
-        html, body, #app {height: 100%}
 
-        #header{
-          height: 100%; 
-          background-image: url('../../public/header.svg'); 
-          background-repeat: no-repeat; 
-          background-position: 50%; 
-          background-size: cover;
-        }
-
-        #categories{
-          height: 100%; 
-          background-image: url('../../public/categories.svg'); 
-          background-repeat: no-repeat; 
-          background-position: 50%; 
-          background-size: cover;
-        }
-</style>
-<script>
-
-import { onBeforeMount } from "vue";
-import { useStore } from "vuex";
-import NavigationBar from '@/components/NavigationBar.vue';
-
-export default {
-  components: { NavigationBar },
-  setup() {
-    const store = useStore()
-
-    onBeforeMount(() => {
-      store.dispatch('fetchUser')
-    })
-  }
-}
-
-</script>

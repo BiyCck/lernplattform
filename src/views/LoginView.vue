@@ -45,28 +45,20 @@
 </template>
 <style> html, body, #app {height: 100%}</style>
 
-<script>
+<script setup>
 
-    import {ref} from 'vue';
-    import {useStore} from 'vuex';
+import {ref} from 'vue';
 import NavigationBar from '@/components/NavigationBar.vue';
+import {useUserStore} from '@/store/UserStore';
+import router from '@/router';
 
-    export default {
-  components: { NavigationBar },
-    setup () {
-        const login_form = ref({});
-        const store = useStore();
 
-        const login = () => {
-            store.dispatch('login', login_form.value)
-        }
+const login_form = ref({});
+const store = useUserStore();
 
-        return {
-            login_form,
-            login,
-        }
-
-    }
-
+function login() {
+    store.login(login_form.value)
+    router.push("/")
 }
+
 </script>
