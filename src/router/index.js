@@ -26,7 +26,7 @@ const routes = [
     component: () => import('../views/RegisterView.vue')
   },
    {
-    path: '/test',
+    path: '/lectures',
     name: 'Test',
     component: () => import('../components/CodeWithConsole.vue'),
    }
