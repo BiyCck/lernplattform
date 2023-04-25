@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { auth } from '@/firebase'
+import  {useUserStore}  from '@/store/UserStore'
 
 const routes = [
   {
@@ -24,7 +24,12 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: () => import('../views/RegisterView.vue')
-  }
+  },
+   {
+    path: '/test',
+    name: 'Test',
+    component: () => import('../components/CodeWithConsole.vue'),
+   }
 ]
 
 const router = createRouter({
@@ -35,21 +40,16 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
 
-  const currentUser = auth.currentUser;
-  if(to.path === '/login' && currentUser){
+  const isLoggedIn = useUserStore().isLoggedIn;
+  if(to.path === '/login' && isLoggedIn){
     next('/lektion')
     return;
   }
 
-  if(to.path === '/register' && currentUser){
+  if(to.path === '/register' && isLoggedIn){
     next('/lektion')
     return;
   }
-  if(to.matched.some(record => record.meta.requiresAuth) && !currentUser){
-    next('/login')
-    return;
-  }
-
   next();
 })
 

@@ -1,112 +1,62 @@
 <template>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary z-1 position-absolute container-fluid">
-        <div class="container-fluid">
-            <img style="height:52px" src="../../public/HSBA_Logo.svg" class="px-1" alt="...">
-            <form class="d-flex my-auto mx-4 rounded" role="search">
-                <input class="form-control me-2 rounded-pill fw-bold" type="search" placeholder="Suchen nach..." aria-label="Search">
-            </form>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-             <li>   
-                <router-link to="/">
-                    <a class="nav-link">
-                        <div class="container text-center">
-                            <div class="row align-items-start">
-                                <div class="col p-0">
-                                    <span class="material-symbols-outlined">
-                                        home
-                                    </span>
-                                </div>
-                                <div class="col fw-bold">
-                                    Home                           
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/lektion">
-                    <a class="nav-link">
-                        <div class="container text-center">
-                            <div class="row align-items-start">
-                                <div class="col p-0">
-                                    <span class="material-symbols-outlined">
-                                        school
-                                    </span>
-                                </div>
-                                <div class="col fw-bold">
-                                    Kurse                           
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </router-link>    
-              </li>
-              <li>
-                <router-link to="/login" v-if="!$store.state.user">
-                    <a class="nav-link">
-                        <div class="container text-center">
-                            <div class="row align-items-start">
-                                <div class="col p-0">
-                                <span class="material-symbols-outlined">
-                                    login
-                                    </span>
-                                </div>
-                                <div class="col fw-bold">
-                                    Login                           
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/register" v-if="!$store.state.user">
-                    <a class="nav-link">
-                        <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col p-0">
-                                <span class="material-symbols-outlined">
-                                input
-                                </span>
-                            </div>
-                            <div class="col fw-bold">
-                                Registrierung                           
-                            </div>
-                        </div>
-                        </div>
-                    </a>
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/logout" v-if="$store.state.user">
-                    <a class="nav-link" @click="$store.dispatch('logout')">
-                        <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col p-0">
-                                <span class="material-symbols-outlined">
-                                input
-                                </span>
-                            </div>
-                            <div class="col fw-bold">
-                                Logout                           
-                            </div>
-                        </div>
-                        </div>
-                      </a>
-                </router-link>
-              </li>
-            </ul>
+    <nav class="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <img src="@/assets/HSBA_Logo.svg">
+
+
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-32 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+                    <li>
+                        <RouterLink to="/">
+                            <div class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                                aria-current="page">Home</div>
+                        </RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/lectures">
+                            <div
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500">
+                                Lectures</div>
+                        </RouterLink>
+                    </li>
+
+                    <li v-if="!userStore.isLoggedIn">
+                        <RouterLink to="/login">
+                            <div
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500">
+                                Login</div>
+
+                        </RouterLink>
+                    </li>
+                    <li v-if="!userStore.isLoggedIn">
+                        <RouterLink to="/register">
+                            <div
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500">
+                                Register</div>
+                        </RouterLink>
+
+                    </li>
+                    <li v-if="userStore.isLoggedIn">
+                        <RouterLink to="/logout">
+                            <div
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500">
+                                Logout</div>
+                        </RouterLink>
+
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
-
 </template>
+<script setup>
 
-<script>
+import { useUserStore } from '@/store/UserStore';
+
+const userStore = useUserStore()
+
+
 
 </script>
-
-<style>
-
-</style>
+<style></style>

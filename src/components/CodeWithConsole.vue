@@ -1,31 +1,8 @@
 <template>
-    <body>
-        <NavigationBar />
-        <!-- content -->
-    <div class="container-fluid py-5 px-5">
-        <!-- title -->
-        <div class="container-fluid row pt-5">
-            <h1 class="fw-bold fs-1" style="color: #002B5C;">Lektion 3: Programmelemente</h1>
-        </div>
-        <!-- left -->
-        <div class="row">
-            <div class="col-2 py-5">
-                <nav class="nav flex-column">
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 1</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 2</a>
-                    <a class="nav-link rounded-pill my-2 text-white text-center" style="background-color: #002B5C;" href="#">Lektion 3</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 4</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 5</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 6</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 7</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 8</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 9</a>
-                    <a class="nav-link bg-body-tertiary rounded-pill my-2 text-black text-center" href="#">Lektion 10</a>
-                </nav>
-            </div>
     
-            <!-- right -->
-            <div class="col py-5">
+    <Splitter layout="horizontal" style="height: 75vh;">
+        <SplitterPanel :size="40">
+            <ScrollPanel class="h-full">
                 <div class="container-fluid p-4 bg-body-tertiary rounded">
                     <!-- Text -->
                     <p class="lh-base fw-light py-4">
@@ -70,28 +47,7 @@
                         <p class="lh-base fw-light">
                             Schreibe ein Programm mit Python, welchesden Text “Hello World” ausgibt.
                         </p>
-                        <form>
-                            <div class="mb-3">
-                                <div class="input-group">
-                                    <span class="input-group-text">Code</span>
-                                    <textarea class="form-control" aria-label="With textarea" style="min-height: 250px" placeholder="math import pi def calc_sphere_volume(r=6): sphere_volume == 4/3*pi*r**2 return sphere_volume"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-11">
-                                    <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #002B5C; border: none">Code prüfen</button>
-                                    <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #002B5C; border: none">Nach Tipp fragen</button>
-                                </div>
-                                <div class="col-1">
-                                    <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #002B5C; border: none">
-                                        <span class="material-symbols-outlined circle">
-                                            smart_toy
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                    
                     </div>
                     <!-- Code Abschnitt -->
                     <div class="py-4">
@@ -99,29 +55,8 @@
                         <p class="lh-base fw-light">
                             Erstelle zweiString-Variablen, eineFloat-Variableund eine Integer-Variable.Die ersteString Variable soll „mystring1“ heißenund das Wort „Hello“ beinhalten. Die zweite String Variable soll „mystring2“ heißen und das Wort „World“ beinhalten.Die Float-Variable soll “float” heißen und den Wert 10.0 beinhalten. Die Integer-Variable soll “integer” heißen und den Wert 3beinhalten.
                         </p>
-                        <form>
-                            <div class="mb-3">
-                                <div class="input-group">
-                                    <span class="input-group-text">Code</span>
-                                    <textarea class="form-control" aria-label="With textarea" style="min-height: 250px" placeholder="math import pi def calc_sphere_volume(r=6): sphere_volume == 4/3*pi*r**2 return sphere_volume"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-11">
-                                    <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #002B5C; border: none">Code prüfen</button>
-                                    <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #002B5C; border: none">Nach Tipp fragen</button>
-                                </div>
-                                <div class="col-1">
-                                    <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #002B5C; border: none">
-                                        <span class="material-symbols-outlined circle">
-                                            smart_toy
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
+                
 
                     <!-- Code Abschnitt -->
                     <div class="py-4">
@@ -129,34 +64,114 @@
                         <p class="lh-base fw-light">
                             Berechne das Volumen eines Kreises mit dem Radius r = 6.                        
                         </p>
-                        <form>
-                            <div class="mb-3">
-                                <div class="input-group">
-                                    <span class="input-group-text">Code</span>
-                                    <textarea class="form-control" aria-label="With textarea" style="min-height: 250px" placeholder="math import pi def calc_sphere_volume(r=6): sphere_volume == 4/3*pi*r**2 return sphere_volume"></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-11">
-                                    <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #002B5C; border: none">Code prüfen</button>
-                                    <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #002B5C; border: none">Nach Tipp fragen</button>
-                                </div>
-                                <div class="col-1">
-                                    <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #002B5C; border: none">
-                                        <span class="material-symbols-outlined circle">
-                                            smart_toy
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
-
                 </div>
-            </div>
-        </div>
-    </div>
 
-</body>
+            </ScrollPanel>
+            
+
+        </SplitterPanel>
+        <SplitterPanel>
+            <Splitter layout="vertical">
+                <SplitterPanel :size="90" :min-size="50">
+                    <div class="h-full">
+                        <Codemirror :code="code" />
+                    </div>
+                </SplitterPanel>
+                <SplitterPanel :size="10" :minSize="10">
+                    <div class="flex justify-center space-x-32 ">
+                        <button
+                            class="bg-yellow-400 hover:bg-yellow-200 text-gray-800 font-semibold py-2 px-4 border-0 border-green-500 rounded-lg shadow"
+                            :class="{ 'cursor-not-allowed': !helpButtonActive }" @click="getHelp">Help</button>
+                        <button
+                            class="bg-green-500 hover:bg-green-300 text-gray-800 font-semibold py-2 px-4 border-0 border-green-500 rounded-lg shadow"
+                            @click="runCode">
+                            Run
+                        </button>
+                    </div>
+                </SplitterPanel>
+                
+            </Splitter>
+        </SplitterPanel>
+
+    </Splitter>
 </template>
-<style> html, body, #app {height: 100%}</style>
+
+<script setup>
+import { fetchEventSource } from '@microsoft/fetch-event-source'
+import { ref } from 'vue'
+import Splitter from 'primevue/splitter'
+import SplitterPanel from 'primevue/splitterpanel'
+import Codemirror from '@/components/Codemirror.vue'
+import ScrollPanel from 'primevue/scrollpanel'
+
+const chatGPTAPI = "https://lernplattform-backend-2ch7vzacyq-ey.a.run.app/chatgpt"
+
+const chatGptResponses = ref([])
+const currentChatGptResponse = ref("")
+const consoleContent = ref("")
+const consoleVisible = ref(false)
+const helpButtonActive = ref(true)
+const code = ref("print('Hello World')")
+const defaultCode = ref("print('Hello World')")
+const task = ref("Schreibe ein Programm mit Python, welches den Text 'Hello World' ausgibt")
+
+async function getHelp() {
+    helpButtonActive.value = false
+    consoleVisible.value = true
+    const eventSource = fetchEventSource(`${chatGPTAPI}`, {
+        method: 'POST',
+        body: JSON.stringify({
+            code: code.value,
+            task: task.value
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    eventSource.addEventListener('message', (event) => {
+        const data = JSON.parse(event.choices[0].delta)
+        console.log(data)
+        currentChatGptResponse.value += data
+    })
+
+    eventSource.addEventListener('open', (event) => {
+        console.log(event)
+    })
+
+    eventSource.addEventListener('close', (event) => {
+        console.log(event)
+        chatGptResponses.value.push(currentChatGptResponse.value)
+    })
+
+    eventSource.addEventListener('error', (event) => {
+        console.log(event)
+    })
+
+}
+
+function reset() {
+    code.value = defaultCode.value
+    chatGptResponses.value = []
+    currentChatGptResponse.value = ""
+    helpButtonActive.value = true
+}
+
+async function runCode() {
+    console.log(code.value)
+    const response = await fetch("https://lernplattform-backend-2ch7vzacyq-ey.a.run.app/runcode", {
+        method: 'POST',
+        body: JSON.stringify({
+            code: code.value
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    const data = await response.json()
+    consoleContent.value = data
+    consoleVisible.value = true
+}
+
+</script>
