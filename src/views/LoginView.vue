@@ -1,45 +1,34 @@
 <template>
-    <head>
-    <meta name="title" content="Lernplattform für Python">
-    <meta name="description" content="Eine Lernplattform, um die Programmiersprache Python zu erlernen.">
-    <meta name="keywords" content="Lernen, Plattform, Lernplattform, python, deep learning, künstliche neuronale netze, machine learning, ki, chatgpt, programmieren, program">
-    <meta name="robots" content="index, nofollow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-16">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    <meta name="author" content="Technikgruppe der HSBA - A20-BI2 & A20-MMC2">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Learning Plattform</title>
-</head>
+
 <body>
-    <navigation-bar />
     <!-- Anmeldung -->
-    <div class="container-xl d-flex" style="height: 100%; color: 002B5C;">
-        <div class="m-auto" style="max-width: 600px">
-            <form class="row g-3" @submit.prevent="login">
-                <div class="col-md-12">
-                    <p class="fw-bold fs-1 text-center">
-                        LOGIN
-                    </p>
-                </div>
-                <div class="col-md-12">
-                  <label for="username" class="form-label">GEBE DEINEN BENUTZERNAMEN EIN</label>
-                  <input type="text" class="form-control bg-body-tertiary rounded-pill" id="username" v-model="login_form.email">
-                </div>
-                <div class="col-md-12">
-                  <label for="inputPassword" class="form-label">GEBE DEIN PASSWORT EIN</label>
-                  <input type="password" class="form-control bg-body-tertiary rounded-pill" id="inputPassword" v-model="login_form.password">
-                </div>
-                <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-primary rounded-pill my-2 text-white text-center fs-4" style="background-color: #002B5C; border: none; height: 50px; width: 150px;">Anmelden</button>
-                </div>
-                <div class="col-12 text-center">
-                  <a class=" btn fs-6">Neu hier? Hier registrieren</a>
-                </div>
-            </form>
-        </div>
-    </div>
+    <section class="">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0  ">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
+                  Login
+              </h1>
+              <form class="space-y-4 md:space-y-6" action="#">
+                  <div>
+                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
+                      <input v-model="email" type="email" name="email" id="email" class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5     " placeholder="name@company.com" required="">
+                  </div>
+                  <div>
+                      <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
+                      <input v-model="password" type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5     " required="">
+                  </div>
+                  
+                  <button @click.prevent="login" type="submit" class="w-full text-white bg-gray-900 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Login</button>
+                  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                      Don’t have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline">Sign up</a>
+                  </p>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
 
 </body>
 </template>
@@ -48,16 +37,16 @@
 <script setup>
 
 import {ref} from 'vue';
-import NavigationBar from '@/components/NavigationBar.vue';
 import {useUserStore} from '@/store/UserStore';
 import router from '@/router';
 
 
-const login_form = ref({});
+const email = ref();
+const password = ref();
 const store = useUserStore();
 
 function login() {
-    store.login(login_form.value)
+    store.login(email.value, password.value)
     router.push("/")
 }
 

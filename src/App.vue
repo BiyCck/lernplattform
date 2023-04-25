@@ -1,6 +1,8 @@
 <template>
   <NavigationBar/>
-  <RouterView/>
+  <body class="mt-40">
+    <RouterView/>
+  </body>
 </template>
 
 <script setup>

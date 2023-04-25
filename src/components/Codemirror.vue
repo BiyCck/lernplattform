@@ -2,7 +2,7 @@
   <codemirror
     v-model="code"
     placeholder="Code goes here..."
-    :style="{ height: '400px', width: '40%', margin: '0 auto' }"
+    :style="{ width: '90%', margin: '0 auto', height: '100%' }"
     :autofocus="true"
     :indent-with-tab="true"
     :tab-size="2"
@@ -11,42 +11,20 @@
   />
 </template>
 
-<script>
+<script setup>
   import { defineComponent, ref, shallowRef } from 'vue'
   import { Codemirror } from 'vue-codemirror'
   import { python } from '@codemirror/lang-python'
   import { oneDark } from '@codemirror/theme-one-dark'
 
-  export default defineComponent({
-    components: {
-      Codemirror
-    },
-    setup() {
-      const code = ref(`print('Hello World')`)
-      const extensions = [python(), oneDark]
+ 
 
-      const view = shallowRef()
-      const handleReady = (payload) => {
-        view.value = payload.view
-      }
+const code = ref(`print('Hello World')`)
+const extensions = [python(), oneDark]
 
-      return {
-        code,
-        extensions,
-        handleReady
-      }
-    },
-    watch : {
-      code : function(newCode, oldCode) { //eslint-disable-line
-        this.emitter.emit("code-update", newCode)
-        
-      }
-    },
+const view = shallowRef()
+const handleReady = (payload) => {
+  view.value = payload.view
+}
 
-    mounted(){
-      this.emitter.on("get-help", () => {
-        this.emitter.emit("code", this.code)
-      })
-    },
-  })
 </script>

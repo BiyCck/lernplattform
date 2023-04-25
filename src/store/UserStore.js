@@ -5,19 +5,20 @@ import { createUserWithEmailAndPassword,
   signInWithEmailAndPassword, 
   signOut 
 } from 'firebase/auth'
-import { computed, ref } from 'vue'
+import { computed , ref} from 'vue'
+import { useLocalStorage } from '@vueuse/core'
+
 
 
 export const useUserStore = defineStore("userStore",() => {
-  const user = ref(null)
+  const user = useLocalStorage('user', ref(null))
   const isLoggedIn = computed(() => user.value !== null);
 
-  async function login(details) {
-    const { email, password} = details
-    
+  async function login(email, password) {
     try {
       await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-        user.value = userCredential.user
+        localStorage.setItem("user", JSON.stringify(userCredential.user))
+        console.log(window.localStorage.getItem("user"))
       })
     } catch(error) {
       switch(error.code) {
