@@ -8,6 +8,7 @@
     :tab-size="2"
     :extensions="extensions"
     @ready="handleReady"
+    @update="updateCode"
   />
 </template>
 
@@ -25,6 +26,12 @@ const extensions = [python(), oneDark]
 const view = shallowRef()
 const handleReady = (payload) => {
   view.value = payload.view
+}
+
+const emit = defineEmits(['updateCode'])
+
+function updateCode() {
+  emit('updateCode', code.value)
 }
 
 </script>

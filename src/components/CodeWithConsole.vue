@@ -73,14 +73,22 @@
         </SplitterPanel>
         <SplitterPanel>
             <Splitter layout="vertical">
-                <SplitterPanel :size="90" :min-size="50">
+                <SplitterPanel :size="60" :min-size="50">
                     <div class="h-full">
-                        <Codemirror :code="code" />
+                        <Codemirror v-model:code="code" @update-code="updateCode"/>
                     </div>
                 </SplitterPanel>
-                <SplitterPanel :size="10" :minSize="10">
+                <SplitterPanel :size="30" :min-size="10" v-if="consoleVisible">
                     <p>{{ currentChatGptResponse }}</p>
+                    <ScrollPanel class="h-full">
+                        <p>{{ consoleContent }}</p>
+                    </ScrollPanel>
+                </SplitterPanel>
+                    
+                <SplitterPanel :size="10" :minSize="10">
+                
                     <div class="flex justify-center space-x-32 ">
+                        <button class="bg-gray-400 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 border-0 border-green-500 rounded-lg shadow" @click="toggleConsole">Console</button>
                         <button
                             class="bg-yellow-400 hover:bg-yellow-200 text-gray-800 font-semibold py-2 px-4 border-0 border-green-500 rounded-lg shadow"
                             :class="{ 'cursor-not-allowed': ! helpButtonActive }" @click="getHelp">Help</button>
@@ -116,6 +124,14 @@ const helpButtonActive = ref(true)
 const code = ref("print('Hello World')")
 const defaultCode = ref("print('Hello World')")
 const task = ref("Schreibe ein Programm mit Python, welches den Text 'Hello World' ausgibt")
+
+function updateCode(newCode) {
+    code.value = newCode
+}
+
+function toggleConsole() {
+    consoleVisible.value = !consoleVisible.value
+}
 
 async function getHelp() {
     console.log("invoked")
@@ -165,9 +181,9 @@ async function runCode() {
             'Content-Type': 'application/json'
         }
     })
-    const data = await response.json()
-    consoleContent.value = data
+    let enc = new TextDecoder("utf-8")
     consoleVisible.value = true
+    consoleContent.value = enc.decode((await response.body.getReader().read()).value)
 }
 
 </script>
