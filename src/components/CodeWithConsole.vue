@@ -106,7 +106,7 @@ import SplitterPanel from 'primevue/splitterpanel'
 import Codemirror from '@/components/Codemirror.vue'
 import ScrollPanel from 'primevue/scrollpanel'
 
-const chatGPTAPI = "http://localhost:5000/chatgpt"
+const backendURI = "https://lernplattform-backend-2ch7vzacyq-ey.a.run.app"
 
 const chatGptResponses = ref([])
 const currentChatGptResponse = ref("")
@@ -122,7 +122,7 @@ async function getHelp() {
     helpButtonActive.value = false
     consoleVisible.value = true
     const controller = new AbortController()
-    const conn = await fetchEventSource(`${chatGPTAPI}`, {
+    const conn = await fetchEventSource(`${backendURI}/chatgpt`, {
         method: 'POST',
         body: JSON.stringify({
             code: code.value,
@@ -156,7 +156,7 @@ function reset() {
 
 async function runCode() {
     console.log(code.value)
-    const response = await fetch("http://localhost:5000/runcode", {
+    const response = await fetch(`${backendURI}/runcode`, {
         method: 'POST',
         body: JSON.stringify({
             code: code.value
