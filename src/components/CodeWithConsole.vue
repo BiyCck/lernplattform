@@ -79,10 +79,11 @@
                     </div>
                 </SplitterPanel>
                 <SplitterPanel :size="10" :minSize="10">
+                    <p>{{ currentChatGptResponse }}</p>
                     <div class="flex justify-center space-x-32 ">
                         <button
                             class="bg-yellow-400 hover:bg-yellow-200 text-gray-800 font-semibold py-2 px-4 border-0 border-green-500 rounded-lg shadow"
-                            :class="{ 'cursor-not-allowed': !helpButtonActive }" @click="getHelp">Help</button>
+                            :class="{ 'cursor-not-allowed': ! helpButtonActive }" @click="getHelp">Help</button>
                         <button
                             class="bg-green-500 hover:bg-green-300 text-gray-800 font-semibold py-2 px-4 border-0 border-green-500 rounded-lg shadow"
                             @click="runCode">
@@ -105,7 +106,7 @@ import SplitterPanel from 'primevue/splitterpanel'
 import Codemirror from '@/components/Codemirror.vue'
 import ScrollPanel from 'primevue/scrollpanel'
 
-const chatGPTAPI = "https://lernplattform-backend-2ch7vzacyq-ey.a.run.app/chatgpt"
+const chatGPTAPI = "http://localhost:5000/chatgpt"
 
 const chatGptResponses = ref([])
 const currentChatGptResponse = ref("")
@@ -117,9 +118,11 @@ const defaultCode = ref("print('Hello World')")
 const task = ref("Schreibe ein Programm mit Python, welches den Text 'Hello World' ausgibt")
 
 async function getHelp() {
+    console.log("invoked")
     helpButtonActive.value = false
     consoleVisible.value = true
-    const eventSource = fetchEventSource(`${chatGPTAPI}`, {
+    const controller = new AbortController()
+    const conn = await fetchEventSource(`${chatGPTAPI}`, {
         method: 'POST',
         body: JSON.stringify({
             code: code.value,
@@ -127,28 +130,21 @@ async function getHelp() {
         }),
         headers: {
             'Content-Type': 'application/json'
-        }
+        },
+        signal: controller.signal,
+        keepalive: true,
+        onmessage(mess) {
+            let data = JSON.parse(mess.data)
+            if(typeof data.choices[0].delta.content !== "undefined") {
+                currentChatGptResponse.value += data.choices[0].delta.content
+            }
+            if (Object.keys(data.choices[0].delta).length === 0){
+                chatGptResponses.value.push(currentChatGptResponse.value)
+                controller.abort()
+            }
+            
+        },
     })
-
-    eventSource.addEventListener('message', (event) => {
-        const data = JSON.parse(event.choices[0].delta)
-        console.log(data)
-        currentChatGptResponse.value += data
-    })
-
-    eventSource.addEventListener('open', (event) => {
-        console.log(event)
-    })
-
-    eventSource.addEventListener('close', (event) => {
-        console.log(event)
-        chatGptResponses.value.push(currentChatGptResponse.value)
-    })
-
-    eventSource.addEventListener('error', (event) => {
-        console.log(event)
-    })
-
 }
 
 function reset() {
@@ -160,7 +156,7 @@ function reset() {
 
 async function runCode() {
     console.log(code.value)
-    const response = await fetch("https://lernplattform-backend-2ch7vzacyq-ey.a.run.app/runcode", {
+    const response = await fetch("http://localhost:5000/runcode", {
         method: 'POST',
         body: JSON.stringify({
             code: code.value
