@@ -27,20 +27,8 @@ export const useLectureStore = defineStore("lectureStore", () => {
 
 
     async function loadUserCode() {
-        if (userCode.length > 0) return
         const coll = collection(db, UserStore.userId)
         const querySnapshot = await getDocs(coll)
-        if (querySnapshot.empty) {
-            console.log("empty")
-            for (let index = 1; index <= lectures.value.length; index++) {
-                const d = doc(coll)
-                await setDoc(d, {
-                    id: index,
-                    code: ""
-                })
-                return
-            }
-        }
         querySnapshot.forEach((doc) => {
             userCode.value.push(doc.data())
         })
@@ -67,8 +55,10 @@ export const useLectureStore = defineStore("lectureStore", () => {
             updateDoc(doc.ref, {
                 code: code
             })
-        }
-        )
+        })
+        const index = userCode.value.findIndex((element) => element.id == id)
+        userCode.value[index].code = code
+        
         return
     }
 
@@ -90,8 +80,14 @@ export const useLectureStore = defineStore("lectureStore", () => {
         await updateDoc(docRef, {
             progress: progress.value
         })
+
         return
     }
+
+    function setProgress(id, value) {
+        progress.value[id - 1] = value
+    }
+
 
     const getUserCode = computed(() => toRaw(userCode.value))
 

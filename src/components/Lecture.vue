@@ -9,7 +9,7 @@
         </div>
 
         <div v-else class="h-full">
-            <LectureWithEditor :id="props.id" :lesson="props.lesson" :task="props.task" :defaultCode="props.defaultCode" />
+            <LectureWithEditor :lectureId="props.id" :lesson="props.lesson" :task="props.task" :defaultCode="props.defaultCode" :userCode="props.userCode" />
         </div>
     </div>
 </template>
@@ -22,7 +22,7 @@ import LectureWithEditor from "@/components/LectureWithEditor.vue";
 import LectureNavigation from "@/components/LectureNavigation.vue";
 import ScrollPanel from "primevue/scrollpanel";
 
-const props = defineProps(["id", "lesson", "task", "defaultCode"]);
+const props = defineProps(["id", "lesson", "task", "defaultCode", "userCode"]);
 
 
 </script>

@@ -10,7 +10,7 @@
             <Splitter layout="vertical" class="h-full">
                 <SplitterPanel :size="50" :min-size="20">
                     <div class="h-full">
-                        <Codemirror :defaultCode="props.defaultCode" @update-code="updateCode"/>
+                        <Codemirror :defaultCode="props.defaultCode" :userCode="props.userCode" @update-code="updateCode"/>
                     </div>
                 </SplitterPanel>
                 <SplitterPanel class="h-full overflow-hidden mx-4 mb-10" :size="50" :min-size="10" v-if="consoleVisible" @update="">
@@ -55,8 +55,8 @@ const consoleVisible = ref(false)
 const helpButtonActive = ref(true)
 const lectureStore = useLectureStore()
 
-const props = defineProps(['lectureId', 'defaultCode', 'task', 'lesson'])
-const code = ref(props.defaultCode)
+const props = defineProps(['lectureId', 'defaultCode', 'task', 'lesson', 'userCode'])
+const code = ref("")
 
 function updateCode(newCode) {
     code.value = newCode
@@ -68,6 +68,7 @@ function toggleConsole() {
 
 
 async function getHelp() {
+    currentChatGptResponse.value = ""
     helpButtonActive.value = false
     consoleVisible.value = true
     consoleContent.value = "help"
