@@ -3,8 +3,6 @@
         <code v-if="props.type == 'code'" style=" white-space: pre-line;">{{ props.value }}</code>
     
   
-        
-   
    
         <p v-if="props.type == 'text'" class="text-justify">{{ props.value }}</p>
 
