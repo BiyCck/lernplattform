@@ -46,6 +46,7 @@ export const useUserStore = defineStore("userStore",() => {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        localStorage.setItem("user", JSON.stringify(userCredential.user))
         user.value = userCredential.user
       })
     } catch(error) {
@@ -73,6 +74,7 @@ export const useUserStore = defineStore("userStore",() => {
   async function logout() {
     await signOut(auth).then(() => {
       user.value = null
+      localStorage.removeItem("user")
     })
     router.push('/')
   }
