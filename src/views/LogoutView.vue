@@ -3,6 +3,7 @@ import { useUserStore } from '@/store/UserStore';
 
 const userStore = useUserStore();
 
+
 userStore.logout();
 
 </script>
