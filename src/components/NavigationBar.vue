@@ -14,7 +14,7 @@
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/lectures">
+                        <RouterLink to="/lecture">
                             <div
                                 class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500">
                                 Lectures</div>
@@ -53,6 +53,7 @@
 <script setup>
 
 import { useUserStore } from '@/store/UserStore';
+import Dropdown from 'primevue/dropdown';
 
 const userStore = useUserStore()
 

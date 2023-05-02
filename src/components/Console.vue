@@ -1,35 +1,31 @@
+<template>
+    <div class="h-full">
+        <button class="bg-gray-400 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 border-0 border-green-500 rounded-lg shadow mr-5">Output</button>
+        <button class="bg-gray-400 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 border-0 border-green-500 rounded-lg shadow">Help</button>
+        <ScrollPanel class="h-full">
+            <section>
+                <p style="background-color: #282c34; white-space: pre-line;">{{ current == "consolelog" ? consolelog : help}}</p>
+            </section>
+            
+        </ScrollPanel>
+    </div>
+</template>
+
 <script setup>
-import ScrollPanel from 'primevue/scrollpanel';
-import SelectButton from 'primevue/selectbutton';
-import { onMounted } from 'vue';
-
-const options = ["Console", "Hilfe"]
-const selected = ref("Console")
-
-onMounted(() => {
-    selected = props.selected
-})
+import {  ref } from "vue";
+import ScrollPanel from 'primevue/scrollpanel'
 
 
-const props = defineProps({
-    content: {
-        type: Object,
-        required: true
-    },
-    selected: {
-        type: String,
-        required: true
-    }
-})
+const props = defineProps(['consolelog', 'help', 'current']);
+
+const emits = ['update'];
+
+function toggleHelp() {
+    emits['update'] = "help"
+}
+function toggleConsole() {
+    emits['update'] = "consolelog"
+}
+
 
 </script>
-
-
-<template>
-    <SelectButton v-model="selected" :options="options" />
-
-    <ScrollPanel>
-        <p>{{ content[selected] }}</p>
-    </ScrollPanel>
-
-</template>

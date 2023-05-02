@@ -11,8 +11,9 @@ import { useLocalStorage } from '@vueuse/core'
 
 
 export const useUserStore = defineStore("userStore",() => {
-  const user = useLocalStorage('user', ref(null))
+  const user = ref(localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null)
   const isLoggedIn = computed(() => user.value !== null);
+  const userId = computed(() => user.value.uid);
 
   async function login(email, password) {
     try {
@@ -87,7 +88,11 @@ export const useUserStore = defineStore("userStore",() => {
       }
     })
   }
+
+  function getUser() {
+    return user.value
+  }
   
-  return { user, isLoggedIn, login, register, logout, fetchUser}
+  return { user, userId, isLoggedIn, getUser, login, register, logout, fetchUser}
   },
 )

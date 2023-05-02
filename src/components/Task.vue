@@ -1,23 +1,21 @@
 <template>
-
-
-
+    <section>
+        <div class="mx-10 px-4 py-4 mt-4" style="background-color: #282c34">
+          <RenderElement v-for="l in props.task" :type="l.type" :value="l.value"></RenderElement>
+        </div>
+    </section>
 </template>
 
-<script>
+<script setup>
+import RenderElement from '@/components/RenderElement.vue';
 
-export default {
-    name: "Task",
-    data() {
-        return {
-            task : ""
-        }
-    },
-    watch : {
-        task : function(newTask, oldTask) { //eslint-disable-line
-            this.emitter.emit("task-update", newTask)
-        }
-    },
-}
+
+const props = defineProps({
+  task: {
+    type: Array,
+    required: true,
+  },
+});
+
 
 </script>
