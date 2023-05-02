@@ -6,7 +6,6 @@ import { createUserWithEmailAndPassword,
   signOut 
 } from 'firebase/auth'
 import { computed , ref} from 'vue'
-import { useLocalStorage } from '@vueuse/core'
 
 
 
@@ -19,7 +18,7 @@ export const useUserStore = defineStore("userStore",() => {
     try {
       await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
         localStorage.setItem("user", JSON.stringify(userCredential.user))
-        console.log(window.localStorage.getItem("user"))
+        user.value = userCredential.user
       })
     } catch(error) {
       switch(error.code) {
@@ -39,7 +38,11 @@ export const useUserStore = defineStore("userStore",() => {
   }
 
   async function register(details) {
-    const { email, password} = details
+    const { email, password, passwordRepeat} = details
+    if(password !== passwordRepeat) {
+      alert("Passwords do not match")
+      return
+    }
 
     try {
       await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
