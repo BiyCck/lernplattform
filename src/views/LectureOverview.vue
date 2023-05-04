@@ -18,7 +18,7 @@ const lectures = lectureStore.getLecture.sort((a, b) => a.id - b.id);
         <div class="w-1/3 my-2 text-lg">
             Danke, dass du dich für unseren Python Kurs entschieden hast. Wir hoffen, dass du viel Spaß hast und viel lernst.
             Die folgenden Lektionen werden dir helfen, die Grundlagen von Python zu verstehen und zu lernen, wie du Python-Code schreibst.
-            Um deinen Fortschritt zu verfolgen, kannst du die Lektionen in der linken Spalte auswählen. Bla Bla Bla
+            Um deinen Fortschritt zu verfolgen, kannst du die Lektionen in der linken Spalte auswählen.
         </div>
         
     </main>
