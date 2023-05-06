@@ -7,7 +7,7 @@
         <h1 class="text-5xl font-bold mb-6 text-blue-900">
           Willkommen auf<br />
           unserer Plattform <br />
-          CodeCoach
+          Code Coach
         </h1>
       </div>
     </div>
