@@ -1,7 +1,7 @@
 <template>
     <nav class="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <img src="@/assets/HSBA_Logo.svg">
+            <img src="@/assets/HSBA_4c_Claim_rechts_Logo.svg" class="w-1/5">
 
 
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
